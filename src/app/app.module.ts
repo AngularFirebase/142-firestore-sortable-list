@@ -8,7 +8,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-
 // Add your project credentials
 // Then use it in the imports section below
 const yourFirebaseConfig = {
@@ -22,19 +21,19 @@ const yourFirebaseConfig = {
 
 // Delete Me!
 import { firebase } from '../env';
+import { SortableDirective} from './sortable.directive';
+import { EmojisComponent } from './emojis/emojis.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, SortableDirective, EmojisComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebase),
-    AngularFirestoreModule, 
-    AngularFireAuthModule, 
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AngularFireStorageModule
-   ],
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

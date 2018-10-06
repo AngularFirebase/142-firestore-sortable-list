@@ -1,0 +1,55 @@
+ul {
+    // background: lightsalmon;
+    list-style: none;
+    padding: 10px;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .handle {
+        cursor: move;
+    }
+    .trash {
+        cursor: pointer;
+    }
+}
+
+.main {
+    font-size: 1.3em;
+}
+
+.draggable-container--is-dragging {
+    border: 5px blue solid;
+}
+
+.draggable-source--is-dragging {
+    transform: scale(0.8);
+    background: lightgray;
+    // transition: transform 300ms ease-in;
+}
+
+// .draggable--over {
+//     transform: scale(0.8);
+//     background: orange;
+//     transition: transform 300ms ease-in;
+// }
+.draggable-source--placed {
+    background: green;
+    transform: scale(1);
+    transition: transform 700ms ease-in;
+}
+
+.draggable--original {
+    transform: scale(0.8);
+    background: orange;
+    transition: transform 300ms ease-in;
+}
+
+// .draggable-source {
+//     transform: scale(0.8);
+// }
+.draggable-mirror {
+    background: gray;
+    display: block;
+}

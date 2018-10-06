@@ -8,11 +8,5 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private afs: AngularFirestore) {
-    //   afs.collection('animals').snapshotChanges(
-    // ).subscribe(x => {
-    //   console.log(x)
-    // })
-    const fire = firebase.firestore().doc('animals/elephant');
-  }
+  constructor(private afs: AngularFirestore) {}
 }

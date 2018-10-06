@@ -1,0 +1,15 @@
+<ul *ngIf="doc$ | async as doc" [data]="doc.favs" fireDrop (stop)="update($event)">
+
+
+    <li *ngFor="let emoji of doc.favs" class="notification is-dark">
+        <span class="handle">🖐️</span>
+
+        <span class="main">{{ emoji }}</span>
+
+        <span class="trash" (click)="removeItem(emoji)">🗑️</span>
+
+    </li>
+</ul>
+<hr>
+
+<button class="button is-success" (click)="appendItem()">Append Item</button>
