@@ -1,4 +1,4 @@
-<ul *ngIf="doc$ | async as doc" [data]="doc.favs" fireDrop (stop)="update($event)">
+<ul *ngIf="doc$ | async as doc" [data]="doc.favs" sortable (stop)="update($event)">
 
 
     <li *ngFor="let emoji of doc.favs" class="notification is-dark">

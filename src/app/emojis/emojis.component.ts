@@ -5,7 +5,6 @@ import {
 } from '@angular/fire/firestore';
 import { firestore } from 'firebase/app';
 import { Observable } from 'rxjs';
-import { SortableSortedEvent } from '@shopify/draggable';
 
 @Component({
   selector: 'app-emojis',
@@ -18,17 +17,10 @@ export class EmojisComponent implements OnInit {
   docRef: AngularFirestoreDocument;
   doc$: Observable<any>;
 
+
   ngOnInit() {
     this.docRef = this.afs.doc(`emojis/userJeffD`);
     this.doc$ = this.docRef.valueChanges();
-  }
-
-  log(e) {
-    console.log(e);
-  }
-
-  update(favs) {
-    this.docRef.update({ favs })
   }
 
   appendItem() {

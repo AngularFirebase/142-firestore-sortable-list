@@ -6,21 +6,21 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import { AngularFirestoreDocument } from '@angular/fire/firestore';
-import { firestore } from 'firebase/app';
 
 import { Sortable } from '@shopify/draggable';
 
 @Directive({
-  selector: '[fireDrop]'
+  selector: '[sortable]'
 })
 export class SortableDirective implements AfterViewInit {
-  @Input() data: any[];
+  @Input()
+  data: any[];
 
   // @Output() start = new EventEmitter();
   // @Output() sort = new EventEmitter();
   // @Output() sorted = new EventEmitter();
-  @Output() stop = new EventEmitter();
+  @Output()
+  stop = new EventEmitter();
 
   sortable: Sortable;
 
@@ -39,13 +39,12 @@ export class SortableDirective implements AfterViewInit {
   }
 
   handleStop(e) {
-    console.log(e)
-    const { newIndex, oldIndex } = e
+    console.log(e);
+    const { newIndex, oldIndex } = e;
     const next = this.data;
     const moved = next.splice(oldIndex, 1);
-    next.splice(newIndex, 0, moved[0])
+    next.splice(newIndex, 0, moved[0]);
 
-    this.stop.emit(next)
+    this.stop.emit();
   }
-
 }
