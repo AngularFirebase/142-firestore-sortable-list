@@ -22,6 +22,10 @@ export class EmojisComponent implements OnInit {
     this.docRef = this.afs.doc(`emojis/userJeffD`);
     this.doc$ = this.docRef.valueChanges();
   }
+  
+  update(e) {
+    this.docRef.update(e) 
+  }
 
   appendItem() {
     const emoji = '🍺 Beer Me'
